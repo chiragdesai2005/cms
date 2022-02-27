@@ -18,8 +18,7 @@
   $data = json_decode(file_get_contents("php://input"));
 
   // Set ID to UPDATE
-  
-  $organization->id = 6 ;
+  $organization->id = $data->id;
   $organization->name = $data->name;
   $organization->address1 = $data->address1;
   $organization->address2 = $data->address2;
@@ -29,10 +28,10 @@
   // Update post
   if($organization->update()) {
     echo json_encode(
-      array('message' => 'Category Updated')
+      array('message' => 'Organization Updated')
     );
   } else {
     echo json_encode(
-      array('message' => 'Category not updated')
+      array('message' => 'Organization not updated')
     );
   }

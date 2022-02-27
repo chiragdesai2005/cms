@@ -98,8 +98,9 @@
 
   // Update Category
   public function update() {
+
     // Create Query
-    $stmt = $this->conn->prepare("update organization SET name = :name, address1 = :address1, address2 = :address2, contact = :contact, mobile = :mobile WHERE id = 6");
+    $stmt = $this->conn->prepare("update organization SET name = :name, address1 = :address1, address2 = :address2, contact = :contact, mobile = :mobile WHERE id = :id");
 
  // Clean data
  $this->id = htmlspecialchars(strip_tags($this->id));
@@ -110,7 +111,8 @@
  $this->mobile = htmlspecialchars(strip_tags($this->mobile));
 
  // Bind data
- $stmt-> bindParam(':name', $this->name);
+  $stmt-> bindParam(':id', $this->id);
+  $stmt-> bindParam(':name', $this->name);
   $stmt-> bindParam(':address1', $this->address1);
   $stmt-> bindParam(':address2', $this->address2);
   $stmt-> bindParam(':contact', $this->contact);
