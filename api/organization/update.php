@@ -24,6 +24,10 @@
   $organization->address2 = $data->address2;
   $organization->contact = $data->contact;
   $organization->mobile = $data->mobile;
+  $organization->email = $data->email;
+  $organization->longitude = $data->longitude;
+  $organization->latitude = $data->latitude;
+
 
   // Update post
   if($organization->update()) {

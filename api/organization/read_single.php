@@ -21,7 +21,15 @@
   // Create array
   $category_arr = array(
     'id' => $category->id,
-    'name' => $category->name
+    'name' => $category->name,
+    'address1' => $category->address1,
+    'address2' => $category->address2,
+    'contact' => $category->contact,
+    'mobile' => $category->mobile,
+    'email' => $category->email,
+    'longitude' => $category->longitude,
+    'latitude' => $category->latitude,
+    'createdAt' => $category->created_at
   );
 
   // Make JSON
